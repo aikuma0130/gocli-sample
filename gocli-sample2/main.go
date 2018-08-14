@@ -10,10 +10,10 @@ import (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "gocli-sample"
+	app.Name = "gocli-sample2"
 	app.Usage = "go cli sample application"
 	app.Action = func(c *cli.Context) error {
-		fmt.Println("gocli sample!!")
+		fmt.Println("gocli sample2!!")
 		return nil
 	}
 
