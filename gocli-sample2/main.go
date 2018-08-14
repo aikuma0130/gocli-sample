@@ -9,20 +9,23 @@ import (
 )
 
 func main() {
+	var language string
+
 	app := cli.NewApp()
 	app.Name = "gocli-sample2"
 	app.Usage = "go cli sample application"
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
-			Name:  "lang",
-			Value: "english",
-			Usage: "language for this app",
+			Name:        "lang",
+			Value:       "english",
+			Usage:       "language for this app",
+			Destination: &language,
 		},
 	}
 
 	app.Action = func(c *cli.Context) error {
-		if c.String("lang") == "japanese" {
+		if language == "japanese" {
 			fmt.Println("ごーしえるあい、さんぷる！！")
 		} else {
 			fmt.Println("gocli sample2!!")
